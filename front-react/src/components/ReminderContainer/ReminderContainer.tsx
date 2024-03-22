@@ -1,6 +1,6 @@
-import './Reminder.css'
+import './ReminderContainer.css'
 
-function Reminder() {
+function ReminderContainer() {
   return (
     <>
       <div className="ReminderAppContainer">
@@ -14,4 +14,4 @@ function Reminder() {
   )
 }
 
-export default Reminder
+export default ReminderContainer

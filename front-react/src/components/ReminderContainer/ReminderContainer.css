@@ -10,6 +10,7 @@
 .HeaderReminderAppContainer {
   display: flex;
   max-height: 5em;
+  font-weight: bold;
 }
 
 .ReminderAppTitleContainer {
