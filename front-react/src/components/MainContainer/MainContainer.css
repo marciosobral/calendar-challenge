@@ -1,9 +1,16 @@
+/* Css que implementa responsividade e ajuda na visualização dos elementos
+criados, para melhor manipulação */
+
 .CalendarAppContainer {
   flex: 0 0 70%;
   padding: 0;
   font-size: 1em;
   text-align: center;
   background-color: #242424;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .HeaderCalendarAppContainer {
@@ -12,7 +19,7 @@
 }
 
 .CalendarAppTitleContainer {
-  flex: 0 0 30%;
+  flex: 3;
   font-size: 1.5em;
   display: flex;
   justify-content: center;
@@ -22,7 +29,7 @@
 }
 
 .WeatherWidgetContainer {
-  flex: 0 0 40%;
+  flex: 4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,7 +37,7 @@
 }
 
 .CurrentDateContainer {
-  flex: 0 0 30%;
+  flex: 3;
   display: flex;
   justify-content: center;
   align-items: center;

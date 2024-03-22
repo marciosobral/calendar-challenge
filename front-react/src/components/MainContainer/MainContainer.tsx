@@ -1,31 +1,34 @@
-import HeaderWeatherWidget from '../HeaderWeatherWidget/HeaderWeatherWidget'
-import Footer from '../Footer/Footer'
-import './MainContainer.css'
-import CalendarReminder from '../CalendarReminder/CalendarReminder'
-import CurrentDate from '../CurrentDate/CurrentDate'
+import HeaderWeatherWidget from "../HeaderWeatherWidget/HeaderWeatherWidget";
+import Footer from "../Footer/Footer";
+import "./MainContainer.css";
+import CalendarReminder from "../CalendarReminder/CalendarReminder";
+import CurrentDate from "../CurrentDate/CurrentDate";
+import CalendarProvider from "../../contexts/CalendarContext";
 
 function MainContainer() {
   return (
-    <>
+    <CalendarProvider>
       <div className="CalendarAppContainer">
-        <div className="HeaderCalendarAppContainer">
-          <div className="CalendarAppTitleContainer">
-            <h1>RemindMe</h1>
+        <div>
+          <div className="HeaderCalendarAppContainer">
+            <div className="CalendarAppTitleContainer">
+              <h1>Sabrina</h1>
+            </div>
+            <div className="WeatherWidgetContainer">
+              <HeaderWeatherWidget />
+            </div>
+            <div className="CurrentDateContainer">
+              <CurrentDate />
+            </div>
           </div>
-          <div className="WeatherWidgetContainer">
-            <HeaderWeatherWidget />
+          <div className="CalendarContainer">
+            <CalendarReminder />
           </div>
-          <div className="CurrentDateContainer">
-            <CurrentDate />
-          </div>
-        </div>
-        <div className="CalendarContainer">
-          <CalendarReminder />
         </div>
         <Footer />
       </div>
-    </>
-  )
+    </CalendarProvider>
+  );
 }
 
-export default MainContainer
+export default MainContainer;

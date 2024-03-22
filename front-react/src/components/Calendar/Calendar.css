@@ -1,3 +1,5 @@
+/* Css básico apenas para visualizar melhor o tamanho dos elementos criados */
+
 .WeekDay {
   font-weight: bold;
 }
@@ -8,4 +10,8 @@
 
 .NextMonth {
   background-color: red;
+}
+
+.MonthlyDay {
+  background-color: green;
 }
