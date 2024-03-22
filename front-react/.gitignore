@@ -12,8 +12,8 @@ dist
 dist-ssr
 *.local
 Test.tsx
-Test.index.css
-Test.App.css
+Instable.tsx
+Instable.css
 
 # Editor directories and files
 .vscode/*
