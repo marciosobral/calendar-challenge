@@ -1,9 +1,14 @@
+/* Css da página principal, onde foram configurados alguns elementos de responsividade */
+
+/* Screen é o container pai que contém as dois containers da aplicação */
 .Screen {
   display: flex;
   min-height: 100vh;
 }
 
 /* @media (max-width: 768px) { */
+/* Tag que permite passar a coluna de Reminders para baixo da coluna do Calendário
+caso a largura do browser não comporte ambas */
 @media (max-width: 1280px) {
   .Screen {
     flex-direction: column;

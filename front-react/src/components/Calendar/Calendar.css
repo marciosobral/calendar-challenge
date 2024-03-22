@@ -1,17 +1,16 @@
 /* Css básico apenas para visualizar melhor o tamanho dos elementos criados */
 
+/* Dias da semana */
 .WeekDay {
   font-weight: bold;
 }
 
-.PrevMonth {
+/* Dias de outros meses que estão presentes no mês atual */
+.PrevMonth, .NextMonth {
   background-color: red;
 }
 
-.NextMonth {
-  background-color: red;
-}
-
+/* Dias do mês atual */
 .MonthlyDay {
   background-color: green;
 }

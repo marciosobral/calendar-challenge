@@ -16,10 +16,12 @@ const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
 const Calendar = () => {
 
-  /* Utilizando o useContext para poder utilizar o mesmo estado entre diferentes componentes */
+  /* Utilizando o useContext para poder utilizar o mesmo estado entre diferentes
+   componentes */
   const {currentMonth, setCurrentMonth} = useContext(CalendarContext);
 
-  /* Criando a função de mudar o mês que é ativada quando se clica em um dia do mês anterior ou do próximo mês  */
+  /* Criando a função de mudar o mês que é ativada quando se clica em um dia do 
+  mês anterior ou do próximo mês  */
   function updateSelectedMonth(newMonth: Date){
     setCurrentMonth({
       date : newMonth,
@@ -59,8 +61,9 @@ const Calendar = () => {
   de dias do mês anterior podem estar presentes no mês atual*/
   const lastDayOfPrevMonth = Number(format((subDays(firstDayOfMonth, 1)), "d"))
   const startingDay = lastDayOfPrevMonth - getDay(firstDayOfMonth) + 1;
-  const daysOfPrevMonth: number[] = Array.from({ length: lastDayOfPrevMonth - startingDay + 1 }
-    , (_, i) => startingDay + i);
+  const daysOfPrevMonth: number[] = Array.from({
+    length: lastDayOfPrevMonth - startingDay + 1
+  }, (_, i) => startingDay + i);
 
   /* Criação de uma função para atualizar o estado do dia selecionado. Provável
   que seja transformar em contexto para ser sincronizada com a aba de Reminders */

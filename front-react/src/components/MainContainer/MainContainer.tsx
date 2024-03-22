@@ -5,6 +5,8 @@ import CalendarReminder from "../CalendarReminder/CalendarReminder";
 import CurrentDate from "../CurrentDate/CurrentDate";
 import CalendarProvider from "../../contexts/CalendarContext";
 
+/* Organização do container da esquerda, o CalendarProvider ainda será transferido
+para o Home.tsx */
 function MainContainer() {
   return (
     <CalendarProvider>

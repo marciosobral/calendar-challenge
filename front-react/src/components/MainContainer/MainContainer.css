@@ -1,6 +1,7 @@
 /* Css que implementa responsividade e ajuda na visualização dos elementos
 criados, para melhor manipulação */
 
+/* Todo o container da esquerda */
 .CalendarAppContainer {
   flex: 0 0 70%;
   padding: 0;
@@ -13,11 +14,13 @@ criados, para melhor manipulação */
   justify-content: space-between;
 }
 
+/* Cabeçalho do container de calendário */
 .HeaderCalendarAppContainer {
   display: flex;
   max-height: 5em;
 }
 
+/* Título do cabeçalho do container de calendário */
 .CalendarAppTitleContainer {
   flex: 3;
   font-size: 1.5em;
@@ -28,6 +31,7 @@ criados, para melhor manipulação */
   font-weight: bold;
 }
 
+/* Container do Widget de Clima */
 .WeatherWidgetContainer {
   flex: 4;
   display: flex;
@@ -36,6 +40,7 @@ criados, para melhor manipulação */
   background-color: green;
 }
 
+/* Container onde mostra o mês e o ano que estão sendo exibidos */
 .CurrentDateContainer {
   flex: 3;
   display: flex;

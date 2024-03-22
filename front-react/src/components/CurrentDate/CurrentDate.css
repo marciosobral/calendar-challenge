@@ -1,3 +1,6 @@
+/* Componente de mês e ano atual */
+
+/* Container onde fica o mês e o ano do calendário que está sendo exibido */
 .CurrentDate {
   font-weight: bold;
 }
