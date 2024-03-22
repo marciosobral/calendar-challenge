@@ -3,11 +3,18 @@
   min-height: 100vh;
 }
 
-@media (max-width: 768px) {
-  .container {
-      flex-direction: column;
+/* @media (max-width: 768px) { */
+@media (max-width: 1280px) {
+  .Screen {
+    flex-direction: column;
   }
-  .CalendarContainer, .ReminderContainer {
+  .CalendarAppContainer, .ReminderAppContainer {
+    flex: 1;
+  }
+  .HeaderCalendarAppContainer{
+    flex: 1;
+  }
+  .TitleContainer, .WeatherWidgetContainer, .CurrentDateContainer{
     flex: 1;
   }
 }

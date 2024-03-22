@@ -1,8 +1,22 @@
-.ReminderContainer {
+.ReminderAppContainer {
   flex: 0 0 30%;
   padding: 0;
   overflow-y: auto;
   text-align: center;
   background-color: #363636;
   color: (255, 255, 255, 0.87);
+}
+
+.HeaderReminderAppContainer {
+  display: flex;
+  max-height: 5em;
+}
+
+.ReminderAppTitleContainer {
+  flex: 0 0 100%;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
 }
