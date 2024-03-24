@@ -8,7 +8,7 @@ function ReminderContainer() {
       <div className="ReminderAppContainer">
         <div className="HeaderReminderAppContainer">
           <div className="ReminderAppTitleContainer">
-            <h1>Reminders</h1>
+            <h2>Reminders</h2>
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ function HeaderWeatherWidget() {
     <>
       {/* Função ainda não implementada que deverá ser transferida para o
       container de Reminders */}
-      <h1 className="HeaderWeatherWidget">24ºF - Raining</h1>
+      <h3 className="HeaderWeatherWidget">24ºF - Raining</h3>
     </>
   )
 }

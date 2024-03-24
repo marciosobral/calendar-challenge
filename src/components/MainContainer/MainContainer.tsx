@@ -3,33 +3,30 @@ import Footer from "../Footer/Footer";
 import "./MainContainer.css";
 import CalendarReminder from "../CalendarReminder/CalendarReminder";
 import CurrentDate from "../CurrentDate/CurrentDate";
-import CalendarProvider from "../../contexts/CalendarContext";
 
-/* Organização do container da esquerda, o CalendarProvider ainda será transferido
-para o Home.tsx */
+
+/* Utilização dos componentes */
 function MainContainer() {
   return (
-    <CalendarProvider>
-      <div className="CalendarAppContainer">
-        <div>
-          <div className="HeaderCalendarAppContainer">
-            <div className="CalendarAppTitleContainer">
-              <h1>Sabrina</h1>
-            </div>
-            <div className="WeatherWidgetContainer">
-              <HeaderWeatherWidget />
-            </div>
-            <div className="CurrentDateContainer">
-              <CurrentDate />
-            </div>
+    <div className="CalendarAppContainer">
+      <div>
+        <div className="HeaderCalendarAppContainer">
+          <div className="CalendarAppTitleContainer">
+            <h1>Sabrina</h1>
           </div>
-          <div className="CalendarContainer">
-            <CalendarReminder />
+          <div className="WeatherWidgetContainer">
+            <HeaderWeatherWidget />
+          </div>
+          <div className="CurrentDateContainer">
+            <CurrentDate />
           </div>
         </div>
-        <Footer />
+        <div className="CalendarContainer">
+          <CalendarReminder />
+        </div>
       </div>
-    </CalendarProvider>
+      <Footer />
+    </div>
   );
 }
 

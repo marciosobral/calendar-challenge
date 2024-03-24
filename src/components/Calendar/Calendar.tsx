@@ -28,10 +28,10 @@ const Calendar = () => {
     })
   }
 
-  /* Utilizando o estado herdado do contexto para definir a data atual */
+  /* Utilizando o estado importado do contexto para definir a data atual */
   const currentDate = currentMonth.date;
   
-  /* Utilização de comandos para melhor visualização das datas */
+  /* Utilização de comandos para manipular a data */
   const currentDayString = format(currentDate, "d");
   const currentMonthString = format(currentDate, "M");
   const currentYear = getYear(currentDate);
@@ -39,7 +39,7 @@ const Calendar = () => {
   const currentMonthNumber = Number(currentMonthString);
 
   /* Criando um estado para o dia que será selecionado no calendário */
-  const [SelectedDay, setSelectedDay] = useState<SelectedDate>
+  const [selectedDay, setSelectedDay] = useState<SelectedDate>
   ({
     dayOfSelectedDate: currentDayNumber,
     monthOfSelectedDate: currentMonthNumber,
@@ -52,7 +52,7 @@ const Calendar = () => {
 
   /* Criação de uma variável e de um Array que trabalham juntas para descobrir
   quantos dias do próximo mês podem estar presentes no mês atual  */
-  const firstDayOfNextMonth = getDay(addMonths(currentDate, 1));
+  const firstDayOfNextMonth = getDay(addMonths(currentDate, 1)) - 1;
   const daysOfNextMonthNumber = Array.from({length: 7 - firstDayOfNextMonth})
 
 
@@ -104,7 +104,8 @@ const Calendar = () => {
         {/* Map que percorre os dias do mês, também serão utilizados para listar
         os reminders, importante melhorar o índice */}
         {daysInMonth.map((day, currentDay) => {
-          return ( <button className="MonthlyDay" 
+          return ( <button className="MonthlyDay"
+          key={JSON.stringify(currentYear) + "-" + currentMonthString + "-" + JSON.stringify(currentDay+1)}
           onClick={() => (updateSelectedDay(currentDay+1, currentMonthNumber, currentYear))}>
             {format(day, "d")}</button> )
         })}
@@ -122,7 +123,7 @@ const Calendar = () => {
       
       {/* Estado do dia Selecionado, pode ser utilizado futuramente para
       implementação dos Reminders */}
-      <h2>{JSON.stringify(SelectedDay)}</h2>
+      <h2>{selectedDay.yearOfSelectedDate + "-" + selectedDay.monthOfSelectedDate + "-" + selectedDay.dayOfSelectedDate}</h2>
     </>
   )
 }
