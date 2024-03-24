@@ -66,14 +66,14 @@ const Calendar = () => {
 
         {/* Foi executada a função Map para listar os itens da Array que foi
         criada no início do código*/}
-        {weekDays.map((weekDayObject) => {
-          return (<div className="WeekDay">{weekDayObject}</div>)
+        {weekDays.map((weekDayObject, weekdayindex) => {
+          return (<div className="WeekDay" key={weekdayindex}>{weekDayObject}</div>)
         })}
 
         {/* Parte onde consta os dias do mês anterior que ainda estão presentes
         no calendário do mês atual */}
-        {daysOfPrevMonth.map((prevMonthDay) => {
-          return (<button className="PrevMonth" onClick={() => 
+        {daysOfPrevMonth.map((prevMonthDay, prevmonthdayindex) => {
+          return (<button className="PrevMonth" key={prevmonthdayindex} onClick={() => 
           (updateSelectedMonth(subMonths(currentMonth.date, 1)))}>
             {prevMonthDay}
             </button>)
@@ -92,7 +92,7 @@ const Calendar = () => {
         no calendário do mês atual, aqui foi feito apenas com o índice da função
         pois todos os meses começam no dia primeiro */}
         {daysOfNextMonthNumber.map((_, nextMonthDay) => {
-          return (<button className="NextMonth" onClick={() => 
+          return (<button className="NextMonth" key={nextMonthDay} onClick={() => 
           (updateSelectedMonth(addMonths(currentMonth.date, 1)))}>
             {nextMonthDay+1}
             </button>)
