@@ -1,24 +1,20 @@
 import './Calendar.css';
 import { eachDayOfInterval, endOfMonth, startOfMonth, format, getDay, 
-  addMonths, getYear, subMonths, subDays} from "date-fns";
-import { useContext, useState } from 'react';
+  addMonths, subMonths, subDays} from "date-fns";
+import { useContext } from 'react';
 import { CalendarContext } from '../../contexts/CalendarContext';
-
-/* Criando interface para o dia que for selecionado no calendário*/
-interface SelectedDate {
-  dayOfSelectedDate: number;
-  monthOfSelectedDate: number;
-  yearOfSelectedDate: number;
-}
 
 /* Colocando em um Array os dias da semana */
 const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
 const Calendar = () => {
 
-  /* Utilizando o useContext para poder utilizar o mesmo estado entre diferentes
-   componentes */
+  /* Utilizando o useContext para poder definir o que está sendo passado
+  pelo contexto */
   const {currentMonth, setCurrentMonth} = useContext(CalendarContext);
+  const {selectedDay, setSelectedDay} = useContext(CalendarContext);
+
+  const currentDate = currentMonth.date;
 
   /* Criando a função de mudar o mês que é ativada quando se clica em um dia do 
   mês anterior ou do próximo mês  */
@@ -27,24 +23,6 @@ const Calendar = () => {
       date : newMonth,
     })
   }
-
-  /* Utilizando o estado importado do contexto para definir a data atual */
-  const currentDate = currentMonth.date;
-  
-  /* Utilização de comandos para manipular a data */
-  const currentDayString = format(currentDate, "d");
-  const currentMonthString = format(currentDate, "M");
-  const currentYear = getYear(currentDate);
-  const currentDayNumber = Number(currentDayString);
-  const currentMonthNumber = Number(currentMonthString);
-
-  /* Criando um estado para o dia que será selecionado no calendário */
-  const [selectedDay, setSelectedDay] = useState<SelectedDate>
-  ({
-    dayOfSelectedDate: currentDayNumber,
-    monthOfSelectedDate: currentMonthNumber,
-    yearOfSelectedDate: currentYear,
-  });
 
   /* Definindo o primeiro dia do mês e o último dia do mês no mês selecionado */
   const firstDayOfMonth = startOfMonth(currentDate);
@@ -105,8 +83,8 @@ const Calendar = () => {
         os reminders, importante melhorar o índice */}
         {daysInMonth.map((day, currentDay) => {
           return ( <button className="MonthlyDay"
-          key={JSON.stringify(currentYear) + "-" + currentMonthString + "-" + JSON.stringify(currentDay+1)}
-          onClick={() => (updateSelectedDay(currentDay+1, currentMonthNumber, currentYear))}>
+          key={selectedDay.yearOfSelectedDate + "-" + selectedDay.monthOfSelectedDate + "-" + JSON.stringify(currentDay+1)}
+          onClick={() => (updateSelectedDay(currentDay+1, selectedDay.monthOfSelectedDate, selectedDay.yearOfSelectedDate))}>
             {format(day, "d")}</button> )
         })}
 
