@@ -12,13 +12,13 @@ function MainContainer() {
       <div>
         <div className="HeaderCalendarAppContainer">
           <div className="CalendarAppTitleContainer">
-            <h1>Sabrina</h1>
-          </div>
-          <div className="ReturnButtonContainer">
-            <CurrentMonthButton />
+            <h1><a href="/">Calendar</a></h1>
           </div>
           <div className="CurrentDateContainer">
             <CurrentDate />
+          </div>
+          <div className="ReturnButtonContainer">
+            <CurrentMonthButton />
           </div>
         </div>
         <div className="CalendarContainer">

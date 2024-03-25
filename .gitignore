@@ -12,8 +12,6 @@ dist
 dist-ssr
 *.local
 Test.tsx
-Instable.tsx
-Instable.css
 BackupCalendar.tsx
 BackupCalendarContext.tsx
 FutureFeatures.txt

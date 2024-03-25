@@ -4,22 +4,21 @@ import { CalendarContext } from '../../contexts/CalendarContext';
 
 function CurrentMonthButton(){
 
-  const {setCurrentMonth} = useContext(CalendarContext);
+  const {setCalendarMonth} = useContext(CalendarContext);
   const todaysMonth = new Date;
 
   function updateSelectedMonth(newMonth: Date){
-    setCurrentMonth({
+    setCalendarMonth({
       date : newMonth,
     })
   }
 
   return (
     <>
-      <div className="CurrentButton">
-        <button onClick={() => 
-            (updateSelectedMonth(todaysMonth))
-            }>Current</button>
-      </div>
+      <button className="CurrentButton" onClick={() => 
+          (updateSelectedMonth(todaysMonth))}>
+            Current
+      </button>
     </>
   )
 

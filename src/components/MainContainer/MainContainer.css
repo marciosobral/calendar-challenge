@@ -11,12 +11,13 @@ criados, para melhor manipulação */
   height: 100vh;
   display: flex;
   flex-direction: column;
+  line-height: 1.4em;
 }
 
 /* Cabeçalho do container de calendário */
 .HeaderCalendarAppContainer {
   display: flex;
-  max-height: 5em;
+  height: 3em;
   background-color: #ffffff;
   box-shadow: 0px 0px 5px 2px lightgray;
 }
@@ -29,12 +30,12 @@ criados, para melhor manipulação */
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  color: #5082ff;
+  color: #ff5050;
 }
 
 /* Container do Botão que volta para o mês atual */
 .ReturnButtonContainer {
-  flex: 25%;
+  flex: 15%;
   display: flex;
   justify-content: center;
   align-items: center;

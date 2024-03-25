@@ -5,9 +5,9 @@ criados, para melhor manipulação */
 .ReminderAppContainer {
   flex: 0 0 30%;
   padding: 0;
-  overflow-y: auto;
   text-align: center;
   background-color: #ffffff;
+  height: 100vh;
   color: #424242;
   border-left: 1px solid #ddd;
 }
@@ -15,13 +15,15 @@ criados, para melhor manipulação */
 /* Cabeçalho do container de Reminders */
 .HeaderReminderAppContainer {
   display: flex;
-  max-height: 5em;
   font-weight: bold;
+  flex-direction: column;
+  height: 3em;
+  box-shadow: 0px 2px 5px 0px lightgray;
 }
 
 /* Título do cabeçalho do container de Reminders */
 .ReminderAppTitleContainer {
-  flex: 0 0 80%;
+  flex: 10;
   font-size: 1.5em;
   display: flex;
   justify-content: center;
@@ -29,23 +31,45 @@ criados, para melhor manipulação */
   background-color: none;
 }
 
+.SubHeaderReminderContainer{
+  flex: 0 0 100%;
+  display: flex;
+  font-size: 1em;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 2em;
+}
+
 .AddReminderContainer {
-  flex: 0 0 20%;
-  font-size: 1.75em;
+  flex: 0 0 30%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: none;
+  background-color: #14d55b;
+  border-radius: 12px;
+  color: white;
 }
 
 .CurrentDayOfReminders{
-  flex: 1;
-  font-size: 1em;
-  height: 1.89em;
+  flex: 0 0 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: none;
+  background-color: #ff5950;
+  border-radius: 12px;
+  color: white;
+}
+
+.AddReminderContainer:hover{
+  background-color: #50ff9080;
+  color: #424242;
+}
+
+.CurrentDayOfReminders:hover{
+  background-color: #ff595092;
+  color:#424242;
 }
 
 .Reminders {
