@@ -1,6 +1,6 @@
 import './Calendar.css';
 import { eachDayOfInterval, endOfMonth, startOfMonth, format, getDay, 
-  addMonths, subMonths, subDays} from "date-fns";
+  addMonths, subMonths, subDays, isToday, addDays, getMonth, getYear} from "date-fns";
 import { useContext } from 'react';
 import { CalendarContext } from '../../contexts/CalendarContext';
 
@@ -11,8 +11,7 @@ const Calendar = () => {
 
   /* Utilizando o useContext para poder definir o que está sendo passado
   pelo contexto */
-  const {currentMonth, setCurrentMonth} = useContext(CalendarContext);
-  const {selectedDay, setSelectedDay} = useContext(CalendarContext);
+  const {currentMonth, setCurrentMonth, selectedDay, setSelectedDay} = useContext(CalendarContext);
 
   const currentDate = currentMonth.date;
 
@@ -30,9 +29,8 @@ const Calendar = () => {
 
   /* Criação de uma variável e de um Array que trabalham juntas para descobrir
   quantos dias do próximo mês podem estar presentes no mês atual  */
-  const firstDayOfNextMonth = getDay(addMonths(currentDate, 1)) - 1;
+  const firstDayOfNextMonth = getDay(addDays(lastDayOfMonth, 1));
   const daysOfNextMonthNumber = Array.from({length: 7 - firstDayOfNextMonth})
-
 
   /* Criação de variáveis de uma array que trabalham juntas para descobrir em
   qual dia acaba o mês anterior ao mês atual, utilizado para formar os elementos
@@ -61,8 +59,8 @@ const Calendar = () => {
 
   return (
     <>
-      {/* Aqui foi utilizado o Tailwind para criação dos grids */}
-      <div className='grid grid-cols-7 gap-2'>
+      {/* Criação dos grids */}
+      <div className='Calendar'>
 
         {/* Foi executada a função Map para listar os itens da Array que foi
         criada no início do código*/}
@@ -79,12 +77,26 @@ const Calendar = () => {
             </button>)
         })}
 
-        {/* Map que percorre os dias do mês, também serão utilizados para listar
-        os reminders, importante melhorar o índice */}
+        {/* Map que percorre os dias do mês */}
         {daysInMonth.map((day, currentDay) => {
-          return ( <button className="MonthlyDay"
-          key={selectedDay.yearOfSelectedDate + "-" + selectedDay.monthOfSelectedDate + "-" + JSON.stringify(currentDay+1)}
-          onClick={() => (updateSelectedDay(currentDay+1, selectedDay.monthOfSelectedDate, selectedDay.yearOfSelectedDate))}>
+
+          /* Caso o dia seja o dia de hoje, ele define o nome da classe como TodayDay */
+          if (isToday(day)){
+            var className = "TodayDay";
+          }
+          /* Caso o dia seja o dia selecionado */ 
+          else if (selectedDay.monthOfSelectedDate == getMonth(currentDate)+1 &&
+          selectedDay.yearOfSelectedDate == getYear(currentDate) &&
+          selectedDay.dayOfSelectedDate == currentDay+1){
+            var className = "SelectedDay";
+          } 
+          /* Caso seja apenas um dia normal */
+          else {
+            var className = "MonthlyDay";
+          }
+          return ( <button className={className}
+          key={getYear(currentDate) + "-" + getMonth(currentDate)+1 + "-" + JSON.stringify(currentDay+1)}
+          onClick={() => (updateSelectedDay(currentDay+1, getMonth(currentDate)+1, getYear(currentDate)))}>
             {format(day, "d")}</button> )
         })}
 

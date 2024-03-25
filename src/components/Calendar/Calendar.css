@@ -1,16 +1,51 @@
 /* Css básico apenas para visualizar melhor o tamanho dos elementos criados */
 
+.Calendar{
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  background-color: #fbfbfb;
+}
+
 /* Dias da semana */
 .WeekDay {
   font-weight: bold;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  color: black;
 }
 
+.PrevMonth, .NextMonth, .TodayDay, .MonthlyDay, .SelectedDay{
+  height: 6em;
+  border: 1px solid #ddd;
+  text-align: left;
+}
 /* Dias de outros meses que estão presentes no mês atual */
 .PrevMonth, .NextMonth {
-  background-color: red;
+  background-color: #e6e6e6;
+  color: #c3c3c3;
 }
 
 /* Dias do mês atual */
 .MonthlyDay {
-  background-color: green;
+  color: black;
+}
+
+/* Dia atual */
+.TodayDay {
+  background-color: #5082ff;
+  color: black;
+}
+
+.PrevMonth:hover, .NextMonth:hover, .TodayDay:hover, .MonthlyDay:hover{
+  background-color: #5082ff4a;
+}
+
+.PrevMonth:hover, .NextMonth:hover {
+  color: black;
+}
+
+/* Dia selecionado */
+.SelectedDay {
+  background-color:#5082ff80;
 }

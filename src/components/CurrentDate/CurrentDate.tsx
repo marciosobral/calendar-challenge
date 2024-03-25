@@ -20,20 +20,24 @@ function CurrentDate(){
 
   return (
     <>
-      <div>
-        {/* Função para voltar um mês */}
+      {/* Função para voltar um mês */}
+      <div className="SubMonthsContainer">
         <button onClick={() => 
           (updateSelectedMonth(subMonths(currentMonth.date, 1)))
-          }> menos </button>
+          }>Prev</button>
+      </div>
 
-        {/* Apenas exibe o mês e o ano que estão sendo exibidos no
-        container principal */}  
+      {/* Apenas exibe o mês e o ano que estão sendo exibidos no
+      container principal */}
+      <div className="MonthInfoContainer">  
         <h1 className='CurrentMonth'>{selectedMonth}</h1>
+      </div>
 
-        {/* Função para avançar um mês */}
+      {/* Função para avançar um mês */}
+      <div className="AddMonthsContainer">
         <button onClick={() => 
           (updateSelectedMonth(addMonths(currentMonth.date, 1)))
-          }> mais </button>
+          }>Next</button>
       </div>
     </>
   )

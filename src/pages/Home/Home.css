@@ -4,6 +4,7 @@
 .Screen {
   display: flex;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 /* @media (max-width: 768px) { */
@@ -19,7 +20,19 @@ caso a largura do browser não comporte ambas */
   .HeaderCalendarAppContainer{
     flex: 1;
   }
-  .TitleContainer, .WeatherWidgetContainer, .CurrentDateContainer{
+  .TitleContainer, .CurrentMonthButtonContainer, .CurrentDateContainer{
+    flex: 1;
+  }
+  .HeaderReminderAppContainer{
+    flex: 1;
+  }
+  .ReminderAppTitleContainer, .AddReminderContainer{
+    flex: 1;
+  }
+  .CurrentDayOfReminders{
+    flex: 1;
+  }
+  .Reminder{
     flex: 1;
   }
 }

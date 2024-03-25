@@ -1,8 +1,8 @@
-import HeaderWeatherWidget from "../HeaderWeatherWidget/HeaderWeatherWidget";
 import Footer from "../Footer/Footer";
 import "./MainContainer.css";
 import CalendarReminder from "../CalendarReminder/CalendarReminder";
 import CurrentDate from "../CurrentDate/CurrentDate";
+import CurrentMonthButton from "../CurrentMonthButton/CurrentMonthButton";
 
 
 /* Utilização dos componentes */
@@ -14,8 +14,8 @@ function MainContainer() {
           <div className="CalendarAppTitleContainer">
             <h1>Sabrina</h1>
           </div>
-          <div className="WeatherWidgetContainer">
-            <HeaderWeatherWidget />
+          <div className="ReturnButtonContainer">
+            <CurrentMonthButton />
           </div>
           <div className="CurrentDateContainer">
             <CurrentDate />

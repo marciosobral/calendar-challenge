@@ -1,0 +1,16 @@
+/* Componente do botão que volta ao mês atual */
+
+/* Container onde fica o botão */
+.CurrentButton {
+  justify-content: center;
+  align-items: center;
+  background-color: #5082ff;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 12px;
+  color: white;
+}
+
+.CurrentButton:hover {
+  background-color: #5082ff80;
+}

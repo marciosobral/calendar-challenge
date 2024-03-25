@@ -7,46 +7,47 @@ criados, para melhor manipulação */
   padding: 0;
   font-size: 1em;
   text-align: center;
-  background-color: #242424;
+  background-color: #f3f3f3;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 /* Cabeçalho do container de calendário */
 .HeaderCalendarAppContainer {
   display: flex;
   max-height: 5em;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 5px 2px lightgray;
 }
 
 /* Título do cabeçalho do container de calendário */
 .CalendarAppTitleContainer {
-  flex: 3;
-  font-size: 1.5em;
+  flex: 25%;
+  font-size: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: blue;
   font-weight: bold;
+  color: #5082ff;
 }
 
-/* Container do Widget de Clima */
-.WeatherWidgetContainer {
-  flex: 4;
+/* Container do Botão que volta para o mês atual */
+.ReturnButtonContainer {
+  flex: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: green;
 }
 
 /* Container onde mostra o mês e o ano que estão sendo exibidos */
 .CurrentDateContainer {
-  flex: 3;
+  flex: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
+  background-color: none;
+  color: white;
 }
 
 .CalendarContainer {

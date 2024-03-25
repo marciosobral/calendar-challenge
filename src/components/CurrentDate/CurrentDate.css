@@ -1,6 +1,39 @@
 /* Componente de mês e ano atual */
 
-/* Container onde fica o mês e o ano do calendário que está sendo exibido */
-.CurrentDate {
+/* Botão que vai para o mês passado */
+.SubMonthsContainer {
+  flex: 0 0 10%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  background-color: #5082ff;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 12px;
+}
+
+/* Botão que mostra o mês que está sendo mostrado */
+.MonthInfoContainer {
+  flex: 0 0 30%;
+  display: flex;
+  font-size: 1.25em;
+  justify-content: center;
+  align-items: center;
+  color: #5082ff;
   font-weight: bold;
+}
+
+/* Botão que vai para o mês seguinte */
+.AddMonthsContainer{
+  flex: 0 0 10%;
+  display: flex;
+  align-items: center;
+  background-color: #5082ff;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 12px;
+}
+
+.AddMonthsContainer:hover, .SubMonthsContainer:hover{
+  background-color:#5082ff80;
 }

@@ -7,8 +7,9 @@ criados, para melhor manipulação */
   padding: 0;
   overflow-y: auto;
   text-align: center;
-  background-color: #363636;
-  color: (255, 255, 255, 0.87);
+  background-color: #ffffff;
+  color: #424242;
+  border-left: 1px solid #ddd;
 }
 
 /* Cabeçalho do container de Reminders */
@@ -20,10 +21,47 @@ criados, para melhor manipulação */
 
 /* Título do cabeçalho do container de Reminders */
 .ReminderAppTitleContainer {
-  flex: 0 0 100%;
+  flex: 0 0 80%;
   font-size: 1.5em;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: blue;
+  background-color: none;
+}
+
+.AddReminderContainer {
+  flex: 0 0 20%;
+  font-size: 1.75em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+}
+
+.CurrentDayOfReminders{
+  flex: 1;
+  font-size: 1em;
+  height: 1.89em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+}
+
+.Reminders {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+  flex-direction: column;
+}
+
+.Reminder{
+  flex: 1;
+  font-size: 1.5em;
+  min-height: 3.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
