@@ -1,7 +1,8 @@
 import CalendarProvider from "../../contexts/CalendarContext";
-import MainContainer from '../../components/MainContainer/MainContainer'
-import ReminderContainer from '../../components/ReminderContainer/ReminderContainer'
-import './Home.css'
+import MainContainer from '../../components/MainContainer/MainContainer';
+import ReminderContainer from '../../components/ReminderContainer/ReminderContainer';
+import RemindersProvider from "../../contexts/RemindersContext";
+import './Home.css';
 
 function Home() {
   return (
@@ -9,8 +10,10 @@ function Home() {
       {/* Apenas puxa os dois componentes necessários para a página Home */}
       <div className="Screen">
         <CalendarProvider>
-          <MainContainer />
-          <ReminderContainer />
+          <RemindersProvider>
+            <MainContainer />
+            <ReminderContainer />
+          </RemindersProvider>
         </CalendarProvider>
       </div>
     </>

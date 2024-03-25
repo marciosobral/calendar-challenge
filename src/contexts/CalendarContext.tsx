@@ -8,7 +8,7 @@ interface CalendarMonthProps {
 /* Criando interface para o dia que for selecionado no calendário */
 interface SelectedDateProps {
   date: Date,
-}
+};
 
 /* Também foi criada uma interface com as propriedades do contexto */
 interface CalendarContextProps {
@@ -16,7 +16,7 @@ interface CalendarContextProps {
   setCalendarMonth: (value: CalendarMonthProps) => void;
   selectedDate: SelectedDateProps;
   setSelectedDate: (value: SelectedDateProps) => void;
-}
+};
 
 export const CalendarContext = createContext({} as CalendarContextProps)
 
@@ -26,7 +26,7 @@ export default function CalendarProvider({children}: { children: React.ReactNode
   /* Criação dos estados que serão compartilhado entre outros componentes */
   const [calendarMonth, setCalendarMonth] = useState<CalendarMonthProps>({
     date: new Date(),
-  })
+  });
   
   const [selectedDate, setSelectedDate] = useState<SelectedDateProps>({
     date: new Date(),
