@@ -1,11 +1,11 @@
-import './CurrentMonthButton.css'
+import './CurrentMonthButton.css';
 import { useContext } from 'react';
 import { CalendarContext } from '../../contexts/CalendarContext';
 
-function CurrentMonthButton(){
+function CurrentMonthButton() {
 
   const {setCalendarMonth} = useContext(CalendarContext);
-  const todaysMonth = new Date;
+  const thisMonth = new Date;
 
   function updateSelectedMonth(newMonth: Date){
     setCalendarMonth({
@@ -15,13 +15,12 @@ function CurrentMonthButton(){
 
   return (
     <>
-      <button className="CurrentButton" onClick={() => 
-          (updateSelectedMonth(todaysMonth))}>
+      <button className="CurrentMonthButton" onClick={() => 
+          (updateSelectedMonth(thisMonth))}>
             Current
       </button>
     </>
-  )
-
+  );
 }
 
 export default CurrentMonthButton

@@ -1,20 +1,22 @@
-import './Calendar.css';
+import './CalendarContainer.css';
 import { eachDayOfInterval, endOfMonth, startOfMonth, format, getDay, 
   addMonths, subMonths, subDays, isToday, addDays} from "date-fns";
 import { useContext } from 'react';
 import { CalendarContext } from '../../contexts/CalendarContext';
+import { RemindersContext } from '../../contexts/RemindersContext';
 
 /* Colocando em um Array os dias da semana */
-const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-const Calendar = () => {
+function Calendar() {
 
   /* Utilizando o useContext para poder definir o que está sendo passado
   pelo contexto */
-  const {calendarMonth, setCalendarMonth, selectedDate, setSelectedDate} = useContext(CalendarContext);
-    
-  const currentMonth = calendarMonth.date;
+  const {calendarMonth, setCalendarMonth, 
+    selectedDate, setSelectedDate} = useContext(CalendarContext);
+  const {reminders} = useContext(RemindersContext);
 
+  const currentMonth = calendarMonth.date;
   const currentSelectedDate = selectedDate.date;
 
   /* Criando a função de mudar o mês que é ativada quando se clica em um dia do 
@@ -25,7 +27,7 @@ const Calendar = () => {
     })
   }
 
-    /* Criação de uma função para atualizar o estado do dia selecionado. */
+  /* Criação de uma função para atualizar o estado do dia selecionado. */
   function updateSelectedDay(updatedDate: Date){
     setSelectedDate({
       date : updatedDate,
@@ -39,7 +41,7 @@ const Calendar = () => {
   /* Criação de uma variável e de um Array que trabalham juntas para descobrir
   quantos dias do próximo mês podem estar presentes no mês atual  */
   const firstDayOfNextMonth = getDay(addDays(lastDayOfMonth, 1));
-  const daysOfNextMonthNumber = Array.from({length: 7 - firstDayOfNextMonth})
+  const daysOfNextMonthNumber = Array.from({length: 7 - firstDayOfNextMonth});
 
   /* Criação de variáveis e de uma array que trabalham juntas para descobrir em
   qual dia acaba o mês anterior ao mês atual, utilizado para formar os elementos
@@ -58,13 +60,12 @@ const Calendar = () => {
 
   return (
     <>
-      {/* Criação dos grids */}
-      <div className='Calendar'>
+      <div className='CalendarApp'>
 
         {/* Foi executada a função Map para listar os itens da Array que foi
         criada no início do código*/}
         {weekDays.map((weekDayObject, weekdayindex) => {
-          return (<div className="WeekDay" key={weekdayindex}>{weekDayObject}</div>)
+          return (<div className="WeekDays" key={weekdayindex}>{weekDayObject}</div>)
         })}
 
         {/* Parte onde consta os dias do mês anterior que ainda estão presentes
@@ -78,26 +79,54 @@ const Calendar = () => {
 
         {/* Map que percorre os dias do mês */}
         {daysInMonth.map((currentDayDate, _) => {
+          const filteredReminders = reminders.filter((reminder) => reminder.date === format(currentDayDate, "yyyy-MM-dd"));
 
-          /* Caso o dia seja o dia de hoje, ele define o nome da classe como TodayDay */
+          /* Caso o dia seja o dia de hoje */
           if (isToday(currentDayDate)){
-            var className = "TodayDay";
+            var classDay = "TodayDay"
           }
 
           /* Caso o dia seja o dia selecionado */ 
           else if (format(currentDayDate, "yyyy-MM-dd") == format(currentSelectedDate, "yyyy-MM-dd")){
-            var className = "SelectedDay";
+            var classDay = "SelectedDay";
           } 
 
           /* Caso seja apenas um dia normal */
           else {
-            var className = "MonthlyDay";
+            var classDay = "MonthlyDay";
           }
-
-          return ( <button className={className}
+          return ( <button className={classDay}
             key={format(currentDayDate, "yyyy-MM-dd")}
             onClick={() => (updateSelectedDay(currentDayDate))}>
               {format(currentDayDate, "d")}
+              <ul>
+                {/* Aqui é onde começa a brincadeira, caso tenha mais de dois reminders no mesmo dia,
+                ele mostra o primeiro reminder e mostra que tem mais X reminders */}
+                {filteredReminders.length > 3 ? (
+                  <>
+                    <li className="ReminderInCalendar" 
+                    key={filteredReminders[0].id} style={{ backgroundColor: filteredReminders[0].color,
+                      color: filteredReminders[0].color === 'yellow' ? 'black' : 'white'}}>
+                      {filteredReminders[0].title}
+                    </li>
+                    <li className="ReminderInCalendar" 
+                    key={filteredReminders[1].id} style={{ backgroundColor: filteredReminders[1].color,
+                      color: filteredReminders[1].color === 'yellow' ? 'black' : 'white'}}>
+                      {filteredReminders[1].title}
+                    </li>
+                    <li className="MoreReminders">+{filteredReminders.length - 2} more reminders</li>
+                  </>
+                ) : (
+
+                  /* Caso tenha apenas 1 ou 2 reminders, ele mostra o título dos dois  */
+                  filteredReminders.map((reminder) => (
+                    <li className='ReminderInCalendar'
+                    style={{ backgroundColor: reminder.color,
+                    color: reminder.color === 'yellow' ? 'black' : 'white'}}
+                    key={reminder.id}>{reminder.title}</li>
+                  ))
+                )}
+              </ul>
             </button>)
         })}
 
@@ -111,12 +140,8 @@ const Calendar = () => {
             </button>)
         })}
       </div>
-      
-      {/* Estado do dia Selecionado, pode ser utilizado futuramente para
-      implementação dos Reminders */}
-      {/* <h2>{format(currentSelectedDate, "yyyy-MM-dd")}</h2> */}
     </>
-  )
+  );
 }
 
 export default Calendar

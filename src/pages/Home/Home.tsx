@@ -1,8 +1,8 @@
-import CalendarProvider from "../../contexts/CalendarContext";
-import MainContainer from '../../components/MainContainer/MainContainer';
-import ReminderContainer from '../../components/ReminderContainer/ReminderContainer';
-import RemindersProvider from "../../contexts/RemindersContext";
 import './Home.css';
+import CalendarProvider from "../../contexts/CalendarContext";
+import RemindersProvider from "../../contexts/RemindersContext";
+import RightContainer from '../../components/RightContainer/RightContainer';
+import LeftContainer from '../../components/LeftContainer/LeftContainer';
 
 function Home() {
   return (
@@ -11,8 +11,8 @@ function Home() {
       <div className="Screen">
         <CalendarProvider>
           <RemindersProvider>
-            <MainContainer />
-            <ReminderContainer />
+            <LeftContainer />
+            <RightContainer />
           </RemindersProvider>
         </CalendarProvider>
       </div>

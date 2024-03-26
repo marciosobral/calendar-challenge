@@ -1,0 +1,15 @@
+.CurrentSelectedDay{
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+  background-color: #ff5950;
+  border-radius: 12px;
+  color: white;
+}
+
+.CurrentSelectedDay:hover{
+  background-color: #ff595092;
+  color:#424242;
+}

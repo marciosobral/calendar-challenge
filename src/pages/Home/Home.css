@@ -3,7 +3,7 @@
 /* Screen é o container pai que contém as dois containers da aplicação */
 .Screen {
   display: flex;
-  min-height: 100vh;
+  min-height: 100vhz;
   background-color: #f3f3f3;
 }
 

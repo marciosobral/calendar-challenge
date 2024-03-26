@@ -1,0 +1,65 @@
+.Reminder{
+  display: grid;
+  font-size: clamp(12px, 1vw, 12px);
+  grid-template-columns: 0.4fr 2fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 10em;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.ReminderTime {
+  display: flex;
+  grid-area: 1 / 1 / 3 / 2;
+  background-color: none;
+  align-items: center;
+  justify-content: center;
+  padding-right: 5px;
+}
+
+.ReminderTitle {
+  display: flex;
+  grid-area: 1 / 2 / 2 / 3;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px 0px 0px 0px;
+  border: 0.5px solid white;
+}
+
+.ReminderDescription {
+  display: flex;
+  grid-area: 2 / 2 / 3 / 3;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 0px 0px 12px;
+  border: 0.5px solid white;
+}
+
+.ReminderEditButton {
+  display: flex;
+  grid-area: 1 / 3 / 2 / 4;
+  align-items: center;
+  justify-content: center;
+  border: 0.5px solid white;
+}
+
+.ReminderWeatherWidget {
+  display: flex;
+  grid-area: 2 / 3 / 3 / 5;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 0px 12px 0px;
+  border: 0.5px solid white;
+}
+
+.ReminderDeleteButton {
+  display: flex;
+  grid-area: 1 / 4 / 2 / 5;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 12px 0px 0px;
+  border: 0.5px solid white;
+}

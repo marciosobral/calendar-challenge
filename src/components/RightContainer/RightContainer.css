@@ -1,0 +1,27 @@
+.RightContainer {
+  flex: 0 0 30%;
+  padding: 0;
+  text-align: center;
+  background-color: #ffffff;
+  height: 100vh;
+  color: #424242;
+  border-left: 1px solid #ddd;
+}
+
+.SubHeaderRightContainer{
+  flex: 0 0 100%;
+  display: flex;
+  font-size: 1em;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 2em;
+}
+
+.RemindersContainer {
+  display: block;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+}

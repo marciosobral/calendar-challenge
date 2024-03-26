@@ -1,7 +1,4 @@
-/* Componente do botão que volta ao mês atual */
-
-/* Container onde fica o botão */
-.CurrentButton {
+.CurrentMonthButton {
   justify-content: center;
   align-items: center;
   background-color: #5082ff;
@@ -11,6 +8,6 @@
   color: white;
 }
 
-.CurrentButton:hover {
+.CurrentMonthButton:hover {
   background-color: #5082ff80;
 }

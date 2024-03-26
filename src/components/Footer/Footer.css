@@ -1,8 +1,10 @@
-/* Apenas o rodapé do container da esquerda */
-
 footer {
+  position: fixed;
+  bottom: 0;
+  right: 0%;
+  width: 100%;
+  background-color: white;
   color: gray;
-  background-color: none;
-  margin-top: auto;
-  margin-bottom: 5px;
+  text-align: center;
+  border-top: 1px solid #ddd;
 }

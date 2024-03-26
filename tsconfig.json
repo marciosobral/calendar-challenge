@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "to delete/Calendar", "to delete/CalendarReminder", "to delete/CurrentDate", "to delete/CurrentMonthButton", "to delete/Footer", "to delete/MainContainer"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

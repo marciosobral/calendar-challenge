@@ -1,0 +1,61 @@
+.AddReminderContainer {
+  flex: 0 0 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 5px;
+  background-color: #14d55b;
+  border-radius: 12px;
+  color: white;
+}
+
+.AddReminderContainer:hover{
+  background-color: #50ff9080;
+  color: #424242;
+}
+
+.AddReminderPopUp {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.AddReminderPopUp form {
+  display: flex;
+  flex-direction: column;
+}
+
+.AddReminderPopUp input[type="time"],
+.AddReminderPopUp input[type="text"],
+.AddReminderPopUp textarea,
+.AddReminderPopUp select {
+  border: none;
+  margin: 10px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #e8e8e8;
+  transition: 0.3s;
+ }
+
+.AddReminderPopUp button {
+  padding: 5px;
+  border-radius: 12px;
+  color: white;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.AddReminderPopUp button[type="submit"] {
+  background-color: #4CAF50;
+}
+
+.AddReminderPopUp button[type="button"] {
+  background-color: #f44336;
+}

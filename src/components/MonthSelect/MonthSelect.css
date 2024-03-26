@@ -1,6 +1,3 @@
-/* Componente de mês e ano atual */
-
-/* Botão que vai para o mês passado */
 .SubMonthsContainer {
   flex: 0 0 10%;
   display: flex;
@@ -12,19 +9,6 @@
   border-radius: 12px;
 }
 
-/* Botão que mostra o mês que está sendo mostrado */
-.MonthInfoContainer {
-  flex: 0 0 30%;
-  display: flex;
-  font-size: 1.25em;
-  justify-content: center;
-  align-items: center;
-  color: #5082ff;
-  font-weight: bold;
-  padding: 5px;
-}
-
-/* Botão que vai para o mês seguinte */
 .AddMonthsContainer{
   flex: 0 0 10%;
   display: flex;
@@ -37,4 +21,15 @@
 
 .AddMonthsContainer:hover, .SubMonthsContainer:hover{
   background-color:#5082ff80;
+}
+
+.CalendarMonth {
+  flex: 0 0 30%;
+  display: flex;
+  font-size: 1.25em;
+  justify-content: center;
+  align-items: center;
+  color: #5082ff;
+  font-weight: bold;
+  padding: 5px;
 }
