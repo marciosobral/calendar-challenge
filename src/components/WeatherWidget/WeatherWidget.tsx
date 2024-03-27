@@ -1,4 +1,4 @@
-import './WeatherWidget.css'
+import './WeatherWidget.css';
 import { ReminderState } from '../../contexts/RemindersContext';
 
 interface WeatherWidgetProps {
@@ -11,7 +11,7 @@ function WeatherWidget({reminder}: WeatherWidgetProps) {
   return (
     <>
       <div className="ReminderWeatherWidget">
-          Weather
+          {reminder.city} 
       </div>
     </>
   );
