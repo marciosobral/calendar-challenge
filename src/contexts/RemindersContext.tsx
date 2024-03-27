@@ -51,7 +51,7 @@ export default function RemindersProvider({children}: { children: React.ReactNod
       date: '2024-03-29',
       time: '14:00',
       title: 'Cinema',
-      description: 'Assistir Kung Fu Panda com meus irmãos',
+      description: 'Assistir Kung Fu Panda com meus irmãos e tals',
       city: 'Goiânia',
       color: 'red',
     },

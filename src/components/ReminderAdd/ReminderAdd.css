@@ -7,6 +7,7 @@
   background-color: #14d55b;
   border-radius: 12px;
   color: white;
+  transition: transform 0.3s ease;
 }
 
 .OutsideContainer{
@@ -22,6 +23,7 @@
 .AddReminderContainer:hover{
   background-color: #50ff9080;
   color: #424242;
+  transform: scale(1.1);
 }
 
 .AddReminderPopUp {
@@ -65,18 +67,22 @@
 
 .AddReminderPopUp button[type="submit"] {
   background-color: #4CAF50;
+  transition: transform 0.3s ease;
 }
 
 .AddReminderPopUp button[type="submit"]:hover {
   background-color: #4caf4fab;
   color: #424242;
+  transform: scale(1.1);
 }
 
 .AddReminderPopUp button[type="button"] {
   background-color: #f44336;
+  transition: transform 0.3s ease;
 }
 
 .AddReminderPopUp button[type="button"]:hover {
   background-color: #f44336a2;
   color: #424242;
+  transform: scale(1.1);
 }

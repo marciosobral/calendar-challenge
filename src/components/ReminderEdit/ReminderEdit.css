@@ -51,18 +51,22 @@
 
 .EditReminderPopUp button[type="submit"] {
   background-color: #4CAF50;
+  transition: transform 0.3s ease;
 }
 
 .EditReminderPopUp button[type="submit"]:hover {
   background-color: #4caf4fab;
   color: #424242;
+  transform: scale(1.1);
 }
 
 .EditReminderPopUp button[type="button"] {
   background-color: #f44336;
+  transition: transform 0.3s ease;
 }
 
 .EditReminderPopUp button[type="button"]:hover {
   background-color: #f44336a2;
   color: #424242;
+  transform: scale(1.1);
 }

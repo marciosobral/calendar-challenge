@@ -6,8 +6,10 @@
   padding-right: 10px;
   border-radius: 12px;
   color: white;
+  transition: transform 0.3s ease;
 }
 
 .CurrentMonthButton:hover {
   background-color: #5082ff80;
+  transform: scale(1.1);
 }

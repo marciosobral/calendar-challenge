@@ -113,7 +113,9 @@ function ReminderEdit({reminder}: ReminderEditProps) {
                 ))}
               </div>
               <button type="submit">Confirm</button>
-              <button type="button" onClick={() => setReminderEditPopUp(false)}>Cancel</button>
+              <button type="button" onClick={() => {setReminderEditPopUp(false);}}>
+                Cancel
+                </button>
             </form>
           </div>
         </div>)}
