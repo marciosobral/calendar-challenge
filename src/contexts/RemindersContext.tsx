@@ -70,7 +70,7 @@ export default function RemindersProvider({children}: { children: React.ReactNod
       time: '08:00',
       title: 'Padaria Canadá',
       description: 'Café da manhã',
-      city: 'Goiânia',
+      city: 'Brasília',
       color: 'red',
     },
     {
