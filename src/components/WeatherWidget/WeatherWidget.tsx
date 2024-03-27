@@ -38,7 +38,7 @@ function WeatherWidget({reminder}: WeatherWidgetProps) {
   useEffect(() => {
     async function getWeather() {
       try {
-        const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${reminder.city}&appid=${API_KEY}&units=metric`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${reminder.city}&appid=${API_KEY}&units=metric`);
         const data = await response.json() as WeatherResponse
 
         if (reminder.date == currentDate){
