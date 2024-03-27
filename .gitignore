@@ -12,7 +12,6 @@ dist
 dist-ssr
 *.local
 FutureFeatures.txt
-src/newComponents/*
 
 # Editor directories and files
 .vscode/*

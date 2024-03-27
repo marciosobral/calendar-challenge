@@ -59,59 +59,61 @@ function ReminderAdd() {
         Add a reminder
       </button>
       {reminderAddPopUp && (
-        <div className="AddReminderPopUp">
-          <form onSubmit={submitConfirm}>
-            <input
-              type="text"
-              name="title"
-              maxLength={15}
-              required
-              onChange={inputChange}
-              placeholder="Reminder Title"
-            />
-            <textarea
-              name="description"
-              maxLength={30}
-              required
-              onChange={inputChange}
-              placeholder="Reminder Description"
-            />
-            <input
-              type="time"
-              name="time"
-              required
-              onChange={inputChange}
-            />
-            <input
-              type="text"
-              name="city"
-              maxLength={15}
-              required
-              onChange={inputChange}
-              placeholder="City"
-            />
-            <div className='ColorPicker'>
-              {['blue', 'red', 'green', 'yellow', 'purple', 'orange'].map((color) => (
-                <label key={color} style={{ display: 'inline-block', width: '30px',
-                  height: '30px', margin: '5px', borderRadius: '50%', cursor: 'pointer',
-                  backgroundColor: color, border: selectedColor === color ? '2px solid black' : 'none' }}>
-                  <input
-                    type="radio"
-                    name="color"
-                    value={color}
-                    required
-                    onChange={(colorPicked) => {
-                      inputChange(colorPicked);
-                      setSelectedColor(colorPicked.target.value);
-                    }}
-                    style={{ display: 'none'}}
-                  />
-                </label>
-              ))}
-            </div>
-            <button type="submit">Confirm</button>
-            <button type="button" onClick={() => setReminderAddPopUp(false)}>Cancel</button>
-          </form>
+        <div className='OutsideContainer'>
+          <div className="AddReminderPopUp">
+            <form onSubmit={submitConfirm}>
+              <input
+                type="text"
+                name="title"
+                maxLength={15}
+                required
+                onChange={inputChange}
+                placeholder="Reminder Title"
+              />
+              <textarea
+                name="description"
+                maxLength={30}
+                required
+                onChange={inputChange}
+                placeholder="Reminder Description"
+              />
+              <input
+                type="time"
+                name="time"
+                required
+                onChange={inputChange}
+              />
+              <input
+                type="text"
+                name="city"
+                maxLength={15}
+                required
+                onChange={inputChange}
+                placeholder="City"
+              />
+              <div className='ColorPicker'>
+                {['blue', 'red', 'green', 'yellow', 'purple', 'orange'].map((color) => (
+                  <label key={color} style={{ display: 'inline-block', width: '30px',
+                    height: '30px', margin: '5px', borderRadius: '50%', cursor: 'pointer',
+                    backgroundColor: color, border: selectedColor === color ? '2px solid black' : 'none',}}>
+                    <input
+                      type="radio"
+                      name="color"
+                      value={color}
+                      required
+                      onChange={(colorPicked) => {
+                        inputChange(colorPicked);
+                        setSelectedColor(colorPicked.target.value);
+                      }}
+                      style={{ display: 'none'}}
+                    />
+                  </label>
+                ))}
+              </div>
+              <button type="submit">Confirm</button>
+              <button type="button" onClick={() => setReminderAddPopUp(false)}>Cancel</button>
+            </form>
+          </div>
         </div>)}
     </>
   );

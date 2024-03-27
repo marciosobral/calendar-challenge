@@ -15,16 +15,6 @@ function Reminders() {
   const filteredReminders = reminders.filter((reminder) => 
     reminder.date === format(selectedDate.date, "yyyy-MM-dd"));
   
-  reminders.sort((a, b) => {
-    if (a.time < b.time) {
-      return -1;
-    }
-    if (a.time > b.time) {
-      return 1;
-    }
-    return 0;
-  });
-  
   return (
     <>
       <ul>
