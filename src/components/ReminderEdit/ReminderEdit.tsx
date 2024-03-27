@@ -23,7 +23,7 @@ function ReminderEdit({reminder}: ReminderEditProps) {
   });
 
   const editReminder = (updatedReminder: ReminderState) => {
-    setReminders(reminders.map(rem => rem.id === reminder.id ? updatedReminder : rem));
+    setReminders(reminders.map(origin => origin.id === reminder.id ? updatedReminder : origin));
   };
 
   const inputChange = (formReminder : any) => {
@@ -43,9 +43,8 @@ function ReminderEdit({reminder}: ReminderEditProps) {
 
   return (
     <>
-      <button className="ReminderEditButton" onClick={() => setReminderEditPopUp(true)}
-      style={{ backgroundColor: reminder.color,
-        color: reminder.color === 'yellow' ? 'black' : 'white'}}>
+      <button className="ReminderEditButton"
+        onClick={() => setReminderEditPopUp(true)}>
         Edit
       </button>
       {reminderEditPopUp && (

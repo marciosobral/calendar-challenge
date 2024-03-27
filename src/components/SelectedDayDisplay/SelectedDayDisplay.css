@@ -4,14 +4,13 @@
   justify-content: center;
   align-items: center;
   background-color: none;
-  background-color: #ff5950;
+  background-color: #ff3d33;
   border-radius: 12px;
   color: white;
-  transition: transform 0.3s ease;
+  transition: all 0.6s ease;
 }
 
 .CurrentSelectedDay:hover{
-  background-color: #ff595092;
+  background-color: #ff3d3392;
   color:#424242;
-  transform: scale(1.1);
 }

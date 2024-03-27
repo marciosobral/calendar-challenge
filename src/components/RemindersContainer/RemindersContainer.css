@@ -9,6 +9,8 @@
   padding-bottom: 30px;
   padding-left: 10px;
   padding-right: 10px;
+
+  animation: summon 1s linear 1;
 }
 
 .ReminderTime {
@@ -22,12 +24,13 @@
 }
 
 .ReminderTitle {
+  font-size: clamp(16px, 1vw, 16px);
   display: flex;
   grid-area: 1 / 2 / 2 / 4;
   align-items: center;
   justify-content: center;
   border-radius: 12px 0px 0px 0px;
-  border: 0.5px solid white;
+  font-weight: bold;
 }
 
 .ReminderDescription {
@@ -36,6 +39,6 @@
   align-items: center;
   justify-content: center;
   border-radius: 0px 0px 0px 12px;
-  border: 0.5px solid white;
+  border-top: 0.5px solid white;
   padding: 4px;
 }

@@ -13,4 +13,9 @@
   justify-content: center;
   align-items: center;
   background-color: none;
+  transition: all 0.6s ease;
+}
+
+.ReminderAppTitle:hover {
+  color: gray;
 }
