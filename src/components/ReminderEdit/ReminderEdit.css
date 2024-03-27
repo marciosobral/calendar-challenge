@@ -70,3 +70,12 @@
   background-color: #f44336a2;
   color: #424242;
 }
+
+.EditReminderPopUp label {
+  transition: all 0.6s ease;
+  ;
+}
+
+.EditReminderPopUp label:hover {
+  transform: scale(1.2)!important;
+}

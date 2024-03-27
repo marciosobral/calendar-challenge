@@ -13,6 +13,7 @@ interface WeatherData {
   };
   weather: {
       main: string;
+      icon: string;
   }[];
   dt_txt: string;
 }
@@ -64,7 +65,10 @@ function WeatherWidget({reminder}: WeatherWidgetProps) {
         <>
           <div className="ReminderWeatherWidget">
             <div>
-              <p>{weather[0]?.weather[0]?.main}</p>
+              <p>
+                {weather[0]?.weather[0]?.main}
+                <img src={`./src/assets/${weather[0]?.weather[0]?.icon}@2x.png`} width="50" height="50"></img>
+              </p>
               <p>{weather[0]?.main.temp}ºC</p>
             </div>
           </div>

@@ -61,7 +61,7 @@ function ReminderAdd() {
       {reminderAddPopUp && (
         <div className='OutsideContainer'>
           <div className="AddReminderPopUp">
-            <form onSubmit={submitConfirm}>
+            <form onSubmit={submitConfirm} id='ReminderAddForm'>
               <input
                 type="text"
                 name="title"
@@ -78,6 +78,7 @@ function ReminderAdd() {
                 placeholder="Reminder Description"
               />
               <input
+                id="TimeInput"
                 type="time"
                 name="time"
                 required
@@ -91,7 +92,7 @@ function ReminderAdd() {
                 onChange={inputChange}
                 placeholder="City"
               />
-              <div className='ColorPicker'>
+              <div id='ColorPicker'>
                 {['blue', 'red', 'green', 'yellow', 'purple', 'orange'].map((color) => (
                   <label key={color} style={{ display: 'inline-block', width: '30px',
                     height: '30px', margin: '5px', borderRadius: '50%', cursor: 'pointer',
