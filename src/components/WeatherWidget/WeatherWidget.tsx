@@ -67,7 +67,7 @@ function WeatherWidget({reminder}: WeatherWidgetProps) {
             <div>
               <p>
                 {weather[0]?.weather[0]?.main}
-                <img src={`./src/assets/${weather[0]?.weather[0]?.icon}@2x.png`} width="50" height="50"></img>
+                <img src={`./assets/${weather[0]?.weather[0]?.icon}@2x.png`} width="50" height="50"></img>
               </p>
               <p>{weather[0]?.main.temp}ºC</p>
             </div>
