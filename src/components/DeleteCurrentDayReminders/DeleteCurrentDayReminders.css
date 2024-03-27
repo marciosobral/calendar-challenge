@@ -1,0 +1,13 @@
+.DeleteCDRButton {
+  padding-right: 6px;
+  padding-left: 6px;
+  background-color: black;
+  border-radius: 12px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.DeleteCDRButton:hover{
+  background-color: #7f7f7f80;
+  color: #424242;
+}

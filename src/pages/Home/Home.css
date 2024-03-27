@@ -14,25 +14,7 @@ caso a largura do browser não comporte ambas */
   .Screen {
     flex-direction: column;
   }
-  .CalendarAppContainer, .ReminderAppContainer {
-    flex: 1;
-  }
-  .HeaderCalendarAppContainer{
-    flex: 1;
-  }
-  .TitleContainer, .CurrentMonthButtonContainer, .CurrentDateContainer{
-    flex: 1;
-  }
-  .HeaderReminderAppContainer{
-    flex: 1;
-  }
-  .ReminderAppTitleContainer, .AddReminderContainer{
-    flex: 1;
-  }
-  .CurrentDayOfReminders{
-    flex: 1;
-  }
-  .Reminder{
+  .HeaderLeftContainer{
     flex: 1;
   }
 }

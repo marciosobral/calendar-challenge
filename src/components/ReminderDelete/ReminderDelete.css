@@ -1,0 +1,15 @@
+.ReminderDeleteButton {
+  display: flex;
+  grid-area: 1 / 5 / 2 / 6;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 12px 0px 0px;
+  border: 0.5px solid white;
+  background-color: red;
+  color: white;
+}
+
+.ReminderDeleteButton:hover {
+  background-color: rgba(255, 0, 0, 0.574);
+  color: #424242;
+}

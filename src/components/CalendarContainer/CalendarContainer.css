@@ -16,7 +16,7 @@
 .PrevMonth, .NextMonth, .TodayDay, .MonthlyDay, .SelectedDay{
   display: grid;
   grid-template-rows: 1fr 10fr;
-  height: 5.8em;
+  height: 6.5em;
   padding-left: 6px;
   border: 1px solid #ddd;
   text-align: left;
@@ -72,8 +72,4 @@
   text-align: center;
   padding-right: 6px;
   line-height: 1.5em;
-}
-
-#purple{
-  background-color: purple;
 }

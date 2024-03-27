@@ -3,6 +3,7 @@ import CalendarProvider from "../../contexts/CalendarContext";
 import RemindersProvider from "../../contexts/RemindersContext";
 import RightContainer from '../../components/RightContainer/RightContainer';
 import LeftContainer from '../../components/LeftContainer/LeftContainer';
+import Footer from '../../components/Footer/Footer';
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
           </RemindersProvider>
         </CalendarProvider>
       </div>
+      <Footer />
     </>
   )
 }

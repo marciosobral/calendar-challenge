@@ -3,6 +3,9 @@ import './RemindersContainer.css';
 import { format } from 'date-fns';
 import { RemindersContext } from '../../contexts/RemindersContext';
 import { CalendarContext } from '../../contexts/CalendarContext';
+import ReminderDelete from '../ReminderDelete/ReminderDelete';
+import WeatherWidget from '../WeatherWidget/WeatherWidget';
+import ReminderEdit from '../ReminderEdit/ReminderEdit';
 
 function Reminders() {
 
@@ -41,21 +44,9 @@ function Reminders() {
               color: reminder.color === 'yellow' ? 'black' : 'white'}}>
               {reminder.description}
             </div>
-            <button className="ReminderEditButton"
-            style={{ backgroundColor: reminder.color,
-              color: reminder.color === 'yellow' ? 'black' : 'white'}}>
-              Edit
-            </button>
-            <div className="ReminderWeatherWidget"
-            style={{ backgroundColor: reminder.color,
-              color: reminder.color === 'yellow' ? 'black' : 'white'}}>
-              Weather
-            </div>
-            <button className="ReminderDeleteButton"
-            style={{ backgroundColor: reminder.color,
-              color: reminder.color === 'yellow' ? 'black' : 'white'}}>
-              Delete
-            </button>
+            <ReminderEdit reminder={reminder}/>
+            <WeatherWidget reminder={reminder}/>
+            <ReminderDelete reminder={reminder}/>
           </li>
             ))}
         </ul>

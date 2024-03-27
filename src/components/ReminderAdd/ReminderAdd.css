@@ -56,6 +56,16 @@
   background-color: #4CAF50;
 }
 
+.AddReminderPopUp button[type="submit"]:hover {
+  background-color: #4caf4fab;
+  color: #424242;
+}
+
 .AddReminderPopUp button[type="button"] {
   background-color: #f44336;
+}
+
+.AddReminderPopUp button[type="button"]:hover {
+  background-color: #f44336a2;
+  color: #424242;
 }

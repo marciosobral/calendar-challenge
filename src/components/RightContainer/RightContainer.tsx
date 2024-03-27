@@ -1,3 +1,4 @@
+import ReminderDeleteByDate from '../DeleteCurrentDayReminders/DeleteCurrentDayReminders';
 import HeaderRightContainer from '../HeaderRightContainer/HeaderRightContainer';
 import ReminderAdd from '../ReminderAdd/ReminderAdd';
 import Reminders from '../RemindersContainer/RemindersContainer';
@@ -15,6 +16,9 @@ function RightContainer() {
         </div>
         <div className='RemindersContainer'>
           <Reminders />
+        </div>
+        <div className='DeleteCurrentDayRemindersContainer'>
+          <ReminderDeleteByDate />
         </div>
       </div>
     </>

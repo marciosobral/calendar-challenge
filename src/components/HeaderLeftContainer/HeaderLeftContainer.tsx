@@ -6,7 +6,7 @@ function HeaderLeftContainer() {
   return (
     <>
       <div className='CalendarTitle'>
-        <h1><a href='/'>Calendar</a></h1>
+        <h1><a href='/'>Sabrina</a></h1>
       </div>
       <div className='MonthSelect'>
         <MonthSelect />
